@@ -1,0 +1,31 @@
+
+
+<mat-sidenav-container>
+
+  <mat-sidenav style="width: 20rem;" #sidenav mode="over" opened="false">
+    <div class="bar">
+      <h2 matSubheader> Categories </h2>
+    </div>
+    <mat-accordion *ngFor="let sup of categories;">
+      <mat-expansion-panel hideToggle class="seamless">
+        <mat-expansion-panel-header>
+      <mat-panel-title>
+        <b>{{sup.name}}</b>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div *ngFor="let categories of sup.children;" class="category-div">
+      <p>{{categories.name}}</p>
+    </div>
+  </mat-expansion-panel>
+    </mat-accordion>
+  </mat-sidenav>
+
+
+  <mat-sidenav-content>
+    <mat-toolbar class="navigation-bar">
+      <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+      <a mat-flat-button href="/products" class="bg"  >RANDOM STORE</a>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

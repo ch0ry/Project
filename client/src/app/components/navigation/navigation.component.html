@@ -1,0 +1,11 @@
+<mat-toolbar>
+  <button mat-icon-button (click)="isExpanded = !isExpanded"><mat-icon>menu</mat-icon></button>
+  <a mat-flat-button href="/" class="bg">Home</a>
+  <a mat-flat-button href="/products" class="bg">Categories</a>
+</mat-toolbar>
+<mat-sidenav-container class="test-container">
+  <mat-sidenav #sidenav mode="over" opened="false">
+    <mat-nav-list>
+    </mat-nav-list>
+  </mat-sidenav>
+</mat-sidenav-container>
